@@ -14,17 +14,17 @@
         - name: Checkout código
           uses: actions/checkout@v3
 
-        -name: Configurar Python
-         uses: actions/setup-python@v4
-         with: 
+        - name: Configurar Python
+          uses: actions/setup-python@v4
+          with: 
            python-version: '3.11'
 
-      - name: Instalar Dependencias
-        run: |
+        - name: Instalar Dependencias
+          run: |
            python -m pip intall --upgrade pip
            pip install -r requirements.txt
 
-      - name: Rodar Testes
-        run: pytest
+        - name: Rodar Testes
+          run: pytest
 
    
