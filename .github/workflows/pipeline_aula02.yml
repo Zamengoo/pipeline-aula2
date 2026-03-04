@@ -21,7 +21,7 @@ jobs:
 
       - name: Instalar Dependencias
         run: | 
-         python -m pip intall --upgrade pip
+         python -m pip install --upgrade pip
          pip install -r requirements.txt
 
       - name: Rodar Testes
