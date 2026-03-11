@@ -6,9 +6,8 @@ on:
     -dev
  pull_request:
   branchs:
-    -dev
     -main
-
+    -dev
 jobs:
 
   build:
