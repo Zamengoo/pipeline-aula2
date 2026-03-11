@@ -1,6 +1,6 @@
 name: Pipeline Aula 02
 
-on: 
+on:
  push:
   branchs:
     -dev
