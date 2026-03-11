@@ -4,10 +4,7 @@ on:
  push:
   branchs:
     -dev
- pull_request:
-  branchs:
-    -main
-    -dev
+
 jobs:
 
   test:
@@ -52,7 +49,6 @@ jobs:
           path: pipeline-demo.zip
 
   deploy:
-    steps:
       runs-on: ubuntu-latest
       needs: test
       environment:
