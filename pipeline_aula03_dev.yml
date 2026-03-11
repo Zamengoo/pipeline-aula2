@@ -10,7 +10,7 @@ on:
     -dev
 jobs:
 
-  build:
+  test:
     runs-on: ubuntu-latest
 
     steps: 
@@ -29,6 +29,27 @@ jobs:
 
       - name: Rodar Testes na dev
         run: pytest
+      
+      - name: Baixar Artefato
+        uses: actions/download-artifact@v3
+        with:
+          name: codigo-buildado
+        
+      - name: Extrair Artefato
+        run: unzip pipeline-demon.zip
+        
+  build:
+    runs-on: ubuntu-latest
+
+    build:
+      - name: Gerar Artefato ZIP
+        run: zip -r pipeline-demon.zip
+
+      - name: Publicar Artefato
+        uses: actions/upload-artifact@v3
+        with: 
+          name: codigo-buildado
+          path: pipeline-demo.zip
 
     deploy:
       runs-on: ubuntu-latest
