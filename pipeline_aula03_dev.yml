@@ -29,3 +29,9 @@ jobs:
 
       - name: Rodar Testes na dev
         run: pytest
+
+    deploy:
+      runs-on: ubuntu-latest
+      needs: test
+      enviroment:
+        name: production
