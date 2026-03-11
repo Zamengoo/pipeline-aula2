@@ -15,7 +15,7 @@ jobs:
 
     steps: 
       - name: Checkout código na dev
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Configurar Python na dev
         uses: actions/setup-python@v4
@@ -31,7 +31,7 @@ jobs:
         run: pytest
       
       - name: Baixar Artefato
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: codigo-buildado
         
@@ -41,12 +41,12 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    build:
+    steps:
       - name: Gerar Artefato ZIP
         run: zip -r pipeline-demon.zip
 
       - name: Publicar Artefato
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with: 
           name: codigo-buildado
           path: pipeline-demo.zip
